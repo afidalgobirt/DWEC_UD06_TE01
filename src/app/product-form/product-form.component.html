@@ -1,0 +1,15 @@
+<form #productForm="ngForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name</label><br>
+  <input class="form-field" type="text" name="name" [(ngModel)]="this.product.name"/><br>
+
+  <label for="stock">Stock</label><br>
+  <input class="form-field" type="number" name="stock" [(ngModel)]="this.product.stock"/><br>
+
+  <label for="unit-of-measure">Unit of Measure</label><br>
+  <input class="form-field" type="text" name="unit-of-measure" [(ngModel)]="this.product.unitOfMeasure"/><br>
+
+  <label for="price-per-unit">Price / Unit</label><br>
+  <input class="form-field" type="text" name="price-per-unit" [(ngModel)]="this.product.pricePerUnit"/><br>
+
+  <input class="form-button pill-button" type="submit" value="Submit"/>
+</form>

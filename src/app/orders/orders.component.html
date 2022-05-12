@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Client</th>
+    <th>Address</th>
+    <th>Ordered date</th>
+    <th>Estimated delivery date</th>
+    <th>Delivery date</th>
+  </tr>
+  <tr class="data-row" *ngFor="let order of saleOrders | keyvalue">
+    <td>{{ clients.get(order.value.getClientId())?.getFullName() }}</td>
+    <td>{{ clients.get(order.value.getClientId())?.getAddress() }}</td>
+    <td>{{ order.value.getOrderDateTime() }}</td>
+    <td><input type="date" value="{{ order.value.getExpectedDeliveryDate() }}" (change)="handleExpectedDeliveryDateChange($event, order.value.getExpectedDeliveryDate())"></td>
+    <td>{{ order.value.getDeliveryDate() }}</td>
+    <td class="button-cell"><button class="pill-button edit-button disabled-button" (click)="handleEditSaleOrderClicked($event, order.value)">Edit</button></td>
+  </tr>
+</table>

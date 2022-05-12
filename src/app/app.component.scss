@@ -1,0 +1,50 @@
+@font-face {
+  font-family: ubuntu-title;
+  src: url(../assets/fonts/ubuntu-title.ttf);
+}
+
+@font-face {
+  font-family: afternoon-in-stereo;
+  src: url(../assets/fonts/afternoon-in-stereo.ttf);
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  
+  .header-title {
+    span:nth-child(1) {
+      margin: 0px 15px 0px 30px;
+      font-family: afternoon-in-stereo;
+      font-size: 3rem;
+    }
+
+    span:nth-child(2) {
+      font-family: ubuntu-title;
+      font-size: 1.5rem;
+    }
+  }
+
+  .header-nav {
+    display: flex;
+    width: 400px;
+    height: 100%;
+    margin: auto 50px auto auto;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    a {
+      padding: 10px 20px;
+      color: #000;
+      text-decoration: none;
+      border-bottom: 4px solid #fff;
+    }
+  }
+}
+
+

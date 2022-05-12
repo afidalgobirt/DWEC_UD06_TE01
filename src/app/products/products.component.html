@@ -1,0 +1,17 @@
+<table>
+  <button class="pill-button create-button" [routerLink]="['/productForm']">New Product</button>
+  <tr>
+    <th>Product</th>
+    <th>Stock</th>
+    <th>Unit of Measure</th>
+    <th>Price / Unit</th>
+  </tr>
+  <tr class="data-row" *ngFor="let product of products | keyvalue">
+    <td>{{ product.value.name }}</td>
+    <td>{{ product.value.stock }}</td>
+    <td>{{ product.value.unitOfMeasure }}</td>
+    <td>{{ product.value.pricePerUnit }} €</td>
+    <td class="button-cell"><button class="pill-button edit-button" [routerLink]="['/productForm/' + product.value.id]">Edit</button></td>
+    <td class="button-cell"><button class="pill-button delete-button" (click)="deleteProduct(product.value.id, product.value.name)">Delete</button></td>
+  </tr>
+</table>

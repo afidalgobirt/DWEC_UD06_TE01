@@ -1,0 +1,31 @@
+<h3>Last month data:</h3>
+<div class="kpi-wrapper">
+  <div class="kpi">
+    <span class="kpi-label">Income</span>
+    <span class="kpi-value">{{ incomeKPI }} €</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-label">Sale Orders</span>
+    <span class="kpi-value">{{ saleOrdersKPI }}</span>
+  </div>
+  <div class="kpi">
+    <span class="kpi-label">Clients</span>
+    <span class="kpi-value">{{ clientsKPI }}</span>
+  </div>
+</div>
+<table>
+    <tr>
+      <th>Client</th>
+      <th>Address</th>
+      <th>Ordered date</th>
+      <th>Estimated delivery date</th>
+      <th>Delivery date</th>
+    </tr>
+    <tr class="data-row" *ngFor="let order of saleOrders | keyvalue">
+      <td>{{ clients.get(order.value.getClientId())?.getFullName() }}</td>
+      <td>{{ clients.get(order.value.getClientId())?.getAddress() }}</td>
+      <td>{{ order.value.getOrderDateTime() }}</td>
+      <td>{{ order.value.getExpectedDeliveryDate() }}</td>
+      <td>{{ order.value.getDeliveryDate() }}</td>
+    </tr>
+</table>

@@ -1,0 +1,44 @@
+h3 {
+  margin-left: 5%;
+}
+
+.kpi-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1rem 0rem;
+
+  .kpi:nth-child(1) {
+    background-color: #01B8AA;
+  }
+
+  .kpi:nth-child(2) {
+    background-color: #F2C80F;
+  }
+
+  .kpi:nth-child(3) {
+    background-color: #FD625E;
+  }
+
+  .kpi {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    span {
+      width: 100%;
+    }
+
+    .kpi-label {
+      font-size: 1.25rem;
+    }
+
+    .kpi-value {
+      font-size: 2rem;
+    }
+  }
+}
