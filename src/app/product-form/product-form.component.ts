@@ -48,6 +48,10 @@ export class ProductFormComponent implements OnInit {
     }
 
     onSubmit() {
+        if (!this.validateForm()) {
+            return;
+        }
+
         if (this.product.id == 0) {
             this.productService.postProduct(this.product).subscribe({
                 next: result => { this.router.navigate(['/products']); },
@@ -59,5 +63,27 @@ export class ProductFormComponent implements OnInit {
                 error: error => { console.log(error); }
             });
         }
+    }
+
+    validateForm(): boolean {
+        let ret = true;
+        let errorMsg = "";
+
+        if (this.product.stock < 0) {
+            ret = false;
+            errorMsg += "The stock amount of a product cannot be negative.";
+        }
+
+        if (this.product.pricePerUnit < 0) {
+            ret = false;
+            errorMsg += "\nThe price per unit cannot be negative.";
+        }
+
+        if (!ret) {
+            alert(errorMsg);
+            console.log(errorMsg);
+        }
+
+        return ret;
     }
 }
